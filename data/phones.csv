@@ -1,0 +1,31 @@
+model,display_freq,battery,price,ram,size,camera_res
+Samsung Galaxy S21,121,4000,19999,10,6.2,64
+Samsung Galaxy S21 FE,135,4500,15999,7,6.4,12
+Samsung Galaxy A52,77,4500,9999,11,6.5,48
+Samsung Galaxy A12,62,5000,4699,5,6.4,16
+Xiaomi Redmi Note 10,89,5000,5999,8,6.43,48
+Xiaomi Redmi Note 11,102,5000,6999,9,6.43,50
+Xiaomi Redmi 9,63,5000,3499,10,6.53,13
+Apple iPhone 12,61,2815,19999,12,6.1,12
+Apple iPhone 13,70,3227,22999,5,6.1,12
+Apple iPhone 13 Pro,130,3095,28999,7,6.1,12
+Apple iPhone SE 2020,64,1821,10999,9,4.7,12
+OnePlus Nord,95,4115,10999,6,6.44,48
+OnePlus Nord 2,103,4500,12999,8,6.43,50
+OnePlus 8,75,4300,14999,10,6.55,48
+OnePlus 9,122,4500,19999,12,6.55,50
+Huawei P40 Lite,68,4200,7999,4,6.4,48
+Huawei Nova 9,124,4300,9999,11,6.57,50
+Motorola Moto G9,65,5000,3999,4,6.5,48
+Motorola Moto G10,72,5000,3999,7,6.5,48
+Motorola Moto G100,99,5000,9999,12,6.7,64
+Realme 7,110,5000,5499,5,6.5,64
+Realme 8,114,5000,5999,9,6.4,64
+Oppo A53,74,5000,4999,11,6.5,16
+Oppo Reno5,107,4310,8999,8,6.43,64
+Sony Xperia 10 III,60,4500,9999,6,6.0,12
+Sony Xperia 1 II,86,4000,24999,10,6.5,12
+Samsung Galaxy Note 20,143,4300,27999,12,6.7,64
+Xiaomi Poco X3 Pro,119,5160,6999,4,6.67,48
+Xiaomi Mi 11 Lite,100,4250,8999,8,6.55,64
+Asus Zenfone 8,71,4000,12999,10,5.9,64
