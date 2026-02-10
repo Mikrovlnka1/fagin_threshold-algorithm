@@ -64,13 +64,13 @@ normalize_data(data_dict, COLUMNS_TO_NORMALIZE, invert_columns)
 #section for selecting columns to search
 selected_columns = st.multiselect("Vyber atributy", all_norm_columns, default=["display_freq_norm", "battery_norm"])
 aggr_func = st.selectbox("➕ Agregační funkce", ["avg", "sum", "min", "max"])
-algorithm = st.radio("🧠 Vyber algoritmus", ["Sekvenční", "Fagin", "Threshold"])
+algorithm = st.radio("Vyber algoritmus", ["Sekvenční", "Fagin", "Threshold"])
 max_k = len(data_dict)
 
 
 # K-value
 k = st.number_input(
-    "🔝 Zadej hodnotu k",
+    "Zadej hodnotu k",
     min_value=1,
     max_value=max_k,
     value=min(5, max_k),
@@ -80,7 +80,7 @@ k = st.number_input(
 
 
 #calling our implemented functions in algorithm.py
-if st.button("🚀 Spustit algoritmus"):
+if st.button("Spustit algoritmus"):
     if algorithm == "Sekvenční":
         result, exec_time, steps = measure_time(dumb_algo_top_k, data_dict, k, selected_columns, aggr_func)
 
@@ -92,7 +92,7 @@ if st.button("🚀 Spustit algoritmus"):
         sorted_lists = load_sorted_lists(selected_columns)
         result, exec_time, steps = measure_time(threshhold_top_k, data_dict, k, sorted_lists, selected_columns, aggr_func)
 
-    st.success(f"✅ Algoritmus dokončen za {exec_time:.2f} ms")
+    st.success(f"Algoritmus dokončen za {exec_time:.2f} ms")
     st.info(f"Algoritmus skončil po {steps} krocích.")
 
     result_df = pd.DataFrame(result)
