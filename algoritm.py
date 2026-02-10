@@ -12,7 +12,7 @@ def measure_time(func, *args, **kwargs):
     start = time.time()
     result, steps = func(*args, **kwargs)
     end = time.time()
-    elapsed_ms = (end - start) * 1000.0  # převedeme sekundy na milisekundy
+    elapsed_ms = (end - start) * 1000.0  # convert seconds to ms
     return result, elapsed_ms, steps
 
 
@@ -290,26 +290,15 @@ if __name__ == "__main__":
     #data_all = load_data(csv_file)   #data predstavuji nase data, je to list slovniku
     #print("Pocet nactenych zaznamu: ", len(data_all))
     data = pd.read_csv(csv_file)
-    print(f"Načítání CSV trvalo: {(time.time() - start) * 1000:.2f} ms")
     data_to_dictionary = data.to_dict('records')
-
-
-
-
-
 
     columns_to_norm = ["price", "battery", "ram", "size", "camera_res", "display_freq"]
     invert_columnss = ["price"]
-
     normalize_data(data_to_dictionary, columns_to_norm, invert_columnss)
-    #print(f"Normalizace trvala: {(time.time() - start) * 1000:.2f} ms")
 
 
     df = pd.DataFrame.from_records(data_to_dictionary)
     columns_for_sorted_csv = ["price_norm", "battery_norm", "ram_norm", "size_norm", "camera_res_norm", "display_freq_norm"]
-    #csdv.create_sorted_csv(df, columns_for_sorted_csv) #chci mit sortnuty normalizovany hodnoty.
-
-
     selected = ['display_freq_norm', 'battery_norm']
     fagin_columns = [f'data/sorted/sorted__{col}.csv' for col in selected]
 
@@ -324,18 +313,7 @@ if __name__ == "__main__":
     top5, seq_time_ms,steps = measure_time(dumb_algo_top_k, data_to_dictionary, 10000, selected, 'avg')
     fag, fag_time_ms,steps_f = measure_time(fagin_top_k, data_to_dictionary,10000, sorted_lists ,selected, 'avg')
     threshold_top_k, thre_time_ms, steps_t = measure_time(threshhold_top_k, data_to_dictionary, 10000, sorted_lists ,selected, 'avg')
-    print(f"\nSekvenční top(k) trvalo {seq_time_ms:.3f} ms")
-    #for row in top5:
-     #   print(f"{row['model']}, score={row['score']:.3f}")
-
-    print(f"\nFagin top(k) trvalo {fag_time_ms:.3f} ms")
-    #for row in fag:
-     #   print(f"{row['model']}, score={row['score']:.3f}")
-
-
-    print(f"\nThreshold top(k) trvalo {thre_time_ms:.3f} ms")
-    #for row in threshold_top_k:
-     #   print(f"{row['model']}, score={row['score']:.3f}")
+  
 
 
 
